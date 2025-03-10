@@ -36,17 +36,14 @@ $apellido = $_SESSION['apellido'];
                             <span>Bienvenida</span>
                         </li>
                     </a>
-                    <li>
-                        <i class="far fa-calendar-alt"></i>
-                        <span>Calendario de Visitas</span>
-                    </li>
                 </ul>
             </nav>
 
+            <!-- Mover el bloque de notificaciones y usuario aquí -->
             <div class="noti">
                 <a href="notificaciones.php">
-                <i class="fas fa-bell"></i>
-                <span class="noti-counter"></span>
+                    <i class="fas fa-bell"></i>
+                    Notificaiones
                 </a>
             </div>
 
@@ -106,7 +103,6 @@ $apellido = $_SESSION['apellido'];
                 </div>
             </div>
         </main>
-        
     </div>
     <script src="script.js"></script>
 </body>

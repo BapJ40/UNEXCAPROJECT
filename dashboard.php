@@ -16,7 +16,7 @@ $apellido = $_SESSION['apellido'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Desplegable</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estiloWelcome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -37,16 +37,12 @@ $apellido = $_SESSION['apellido'];
                             <span>Visitantes</span>
                         </li>
                     </a>
-                    
-                    <li>
-                        <i class="far fa-calendar-alt"></i>
-                        <span>Calendario de Visitas</span>
-                    </li>
+
                 </ul>
             </nav>
         </aside>
         <main class="content" id="content">
-            <h1>Dashboard Principal</h1>
+            <h1>Bienvenido</h1>
             <p>Este es el contenido principal del dashboard. El menú lateral puede desplegarse y replegarse haciendo clic en el icono de menú en la parte superior izquierda.</p>
         </main>
     </div>

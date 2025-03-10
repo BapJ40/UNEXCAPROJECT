@@ -20,10 +20,6 @@ body {
     box-sizing: border-box;
     transition: width 0.3s ease-in-out;
     overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribuye el espacio entre los elementos */
-    height: 100vh; /* Asegura que el sidebar ocupe toda la altura */
 }
 
 .sidebar.collapsed {
@@ -243,12 +239,6 @@ body {
 
 .close:hover {
     color: #000;
-}
-
-
-
-.noti, .user-info {
-    margin-top: auto; /* Empuja estos elementos hacia abajo */
 }
 
 /* Quitar estilos predeterminados de las etiquetas <a> */

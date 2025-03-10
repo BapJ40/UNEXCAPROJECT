@@ -40,7 +40,6 @@ class VisitantesModel {
                         apellido_visitante,
                         telefono_visitante,
                         direccion_visitante,
-                        ruta_foto,
                         estado_id,
                         municipio_id,
                         parroquia_id,
@@ -51,7 +50,7 @@ class VisitantesModel {
                         consejo_comunal_id,
                         ctu_id
                     ) VALUES (
-                        $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15
+                        $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14
                     )
                     RETURNING visitante_id;
                 ";
@@ -63,7 +62,6 @@ class VisitantesModel {
                     $data['apellido_visitante'],
                     $data['telefono_visitante'],
                     $data['direccion_visitante'],
-                    $data['ruta_foto'] ?? null, // Campo opcional
                     empty($data['estado_id']) ? null : $data['estado_id'],
                     empty($data['municipio_id']) ? null : $data['municipio_id'],
                     empty($data['parroquia_id']) ? null : $data['parroquia_id'],

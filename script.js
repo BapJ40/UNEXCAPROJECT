@@ -19,27 +19,28 @@ document.addEventListener('DOMContentLoaded', function () {
         visitorsListView.style.display = 'block';
     }
 
-    // Función para abrir el modal y cargar los detalles del visitante
-    function verDetalleVisitante(visitanteId) {
-        // Hacer una solicitud AJAX para obtener los detalles del visitante
-        fetch(`./api/obtener_detalle_visitante.php?id=${visitanteId}`)
+    // Función para abrir el modal y cargar los detalles de la visita y el visitante
+    function verDetalleVisitante(visitaId) {
+        // Hacer una solicitud AJAX para obtener los detalles de la visita y el visitante
+        fetch(`./api/obtener_detalle_visita.php?id=${visitaId}`)
             .then(response => response.json())
             .then(data => {
                 if (data.error) {
                     alert(data.error); // Mostrar error si lo hay
                 } else {
-                    // Llenar el modal con la información del visitante
+                    // Llenar el modal con la información de la visita y el visitante
                     const contenido = `
-                        <p><strong>Nombre:</strong> ${data.nombre}</p>
-                        <p><strong>Apellido:</strong> ${data.apellido}</p>
-                        <p><strong>Cédula:</strong> ${data.cedula}</p>
-                        <p><strong>Teléfono:</strong> ${data.telefono}</p>
-                        <p><strong>Dirección:</strong> ${data.direccion}</p>
-                        <p><strong>Estado:</strong> ${data.estado}</p>
-                        <p><strong>Municipio:</strong> ${data.municipio}</p>
-                        <p><strong>Parroquia:</strong> ${data.parroquia}</p>
-                        <p><strong>Motivo de la visita:</strong> ${data.motivo_visita}</p>
-                        <p><strong>Fecha de la visita:</strong> ${data.fecha_visita}</p>
+                        <h3>Información de la Visita</h3>
+                        <p><strong>Motivo:</strong> ${data.motivo_visita}</p>
+                        <p><strong>Fecha:</strong> ${data.fecha_visita}</p>
+                        <p><strong>Departamento/Persona:</strong> ${data.departamento_o_persona}</p>
+
+                        <h3>Información del Visitante</h3>
+                        <p><strong>Nombre:</strong> ${data.nombre_visitante}</p>
+                        <p><strong>Apellido:</strong> ${data.apellido_visitante}</p>
+                        <p><strong>Cédula:</strong> ${data.cedula_identidad}</p>
+                        <p><strong>Teléfono:</strong> ${data.telefono_visitante}</p>
+                        <p><strong>Dirección:</strong> ${data.direccion_visitante}</p>
                     `;
                     document.getElementById('detalleVisitanteContent').innerHTML = contenido;
 
@@ -48,8 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             })
             .catch(error => {
-                console.error('Error al obtener los detalles del visitante:', error);
-                alert('Error al cargar los detalles del visitante.');
+                console.error('Error al obtener los detalles de la visita:', error);
+                alert('Error al cargar los detalles de la visita.');
             });
     }
 
@@ -67,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.error(`Error al cargar los datos de visitas: ${error}`);
             });
     }
-
 
     // Función para mostrar los datos de visitas en la tabla
     function mostrarDatosVisitas(datos) {
@@ -91,18 +91,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function asignarEventosVerDetalle() {
         document.querySelectorAll('.view-button').forEach(button => {
             button.addEventListener('click', function () {
-                const visitanteId = this.getAttribute('data-id');
-                verDetalleVisitante(visitanteId);
-            });
-        });
-    }
-
-    function asignarEventosVerDetalle() {
-        document.querySelectorAll('.view-button').forEach(button => {
-            button.addEventListener('click', function () {
-                const visitanteId = this.getAttribute('data-id');
-                console.log("ID del visitante:", visitanteId); // Depuración
-                verDetalleVisitante(visitanteId);
+                const visitaId = this.getAttribute('data-id');
+                console.log("ID de la visita:", visitaId); // Depuración
+                verDetalleVisitante(visitaId);
             });
         });
     }
