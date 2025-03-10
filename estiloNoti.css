@@ -1,0 +1,74 @@
+/* Estilos para la tabla de solicitudes */
+.notificaciones-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.notificaciones-table thead tr {
+    background-color: #007bff; /* Color de fondo del encabezado */
+    color: #ffffff; /* Color del texto del encabezado */
+    font-weight: bold;
+}
+
+.notificaciones-table th,
+.notificaciones-table td {
+    padding: 12px 15px;
+}
+
+.notificaciones-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.notificaciones-table tbody tr:nth-of-type(even) {
+    background-color: #f8f9fa; /* Color de fondo para filas pares */
+}
+
+.notificaciones-table tbody tr:last-of-type {
+    border-bottom: 2px solid #007bff; /* Borde inferior para la última fila */
+}
+
+.notificaciones-table tbody tr:hover {
+    background-color: #e9ecef; /* Color de fondo al pasar el mouse */
+    cursor: pointer;
+}
+
+/* Estilos para los botones de acción */
+.action-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-button.aprobar-button {
+    background-color: #28a745; /* Verde para el botón "Aprobar" */
+}
+
+.action-button.aprobar-button:hover {
+    background-color: #218838; /* Verde oscuro al pasar el mouse */
+}
+
+.action-button.concluir-button {
+    background-color: #17a2b8; /* Azul claro para el botón "Concluir" */
+}
+
+.action-button.concluir-button:hover {
+    background-color: #138496; /* Azul claro oscuro al pasar el mouse */
+}
+
+.action-button.cancelar-button {
+    background-color: #dc3545; /* Rojo para el botón "Cancelar" */
+}
+
+.action-button.cancelar-button:hover {
+    background-color: #c82333; /* Rojo oscuro al pasar el mouse */
+}

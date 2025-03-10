@@ -392,12 +392,6 @@ document.addEventListener('DOMContentLoaded', function() {
             data[key] = value;
         });
     
-        // Agregar el valor del checkbox manualmente
-        data['es_cita_programada'] = document.getElementById('es_cita_programada').checked;
-    
-        // Depuración: Verificar el valor del checkbox antes de enviar
-        console.log("Valor de es_cita_programada antes de enviar:", data['es_cita_programada']);
-    
         fetch('./api/registrar_visitante.php', {
             method: 'POST',
             headers: {

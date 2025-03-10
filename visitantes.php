@@ -42,6 +42,18 @@ $apellido = $_SESSION['apellido'];
                     </li>
                 </ul>
             </nav>
+
+            <div class="noti">
+                <a href="notificaciones.php">
+                <i class="fas fa-bell"></i>
+                <span class="noti-counter"></span>
+                </a>
+            </div>
+
+            <div class="user-info">
+                <p><?php echo $nombre . ' ' . $apellido; ?></p>
+                <a href="logout.php">Cerrar Sesión</a>
+            </div>
         </aside>
         <main class="content" id="content">
             <!-- Vista de Lista de Visitantes Pendientes -->
@@ -83,7 +95,18 @@ $apellido = $_SESSION['apellido'];
             <div id="visitor-registration-view" style="display: none;">
                 <!-- El formulario se cargará aquí dinámicamente desde visitor-form.html -->
             </div>
+
+            <div id="modalDetalleVisitante" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Detalles del Visitante</h2>
+                    <div id="detalleVisitanteContent">
+                        <!-- Aquí se cargará la información del visitante -->
+                    </div>
+                </div>
+            </div>
         </main>
+        
     </div>
     <script src="script.js"></script>
 </body>
